@@ -8,17 +8,19 @@ import android.view.View;
 
 import android.media.MediaPlayer;
 
+public class MainActivity extends AppCompatActivity {
+
 protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        MediaPlayer piano = Mediaplayer.create(getAplicationContent(),R.raw.piano);
+        MediaPlayer piano = MediaPlayer.create(getApplicationContent(),R.raw.piano);
         piano.start();
         }
 
 
     public void message(View view){
-        Intent intent = new Intent(pakageContent:this, secondpage.class);
+        Intent intent = new Intent(this, secondpage.class);
         startActivity(intent);
 }
 
@@ -26,12 +28,13 @@ protected void onCreate(Bundle savedInstanceState){
             Intent emailIntent = new Intent (Intent.ACTION_SEND);
             //Bellow adds to the email to me
         emailIntent.setType("text/plain");
-        emailIntent.putExtra(Intent.EXTRA _EMAIL,new String{}{"neupaneanuj1@gmail.com"));//recipients
-        emailIntent.putExtra(Intent.EXTRA _SUBJECT,  value: "Sound APP");
-        emailIntent.putExtra(Intent.EXTRA _TEXT, value "listen to my voice");
+        emailIntent.putExtra(Intent.EXTRA_EMAIL,new String[]("neupaneanuj1@gmail.com"));
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Sound APP");
+        emailIntent.putExtra(Intent.EXTRA_TEXT, "listen to my voice");
 
         startActivity(emailIntent);
 
 
     }
         }
+}
